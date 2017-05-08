@@ -25,6 +25,8 @@
             
         <h1>Customers</h1>
         <hr>
+        <a href ="add">Add a New Customer</a>
+        <br><br>
         <%= table %>
         </div>
         

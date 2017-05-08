@@ -114,6 +114,10 @@ public class ReadQuery {
                     table+="Email Address";
                 table+="</th>";
                 
+                table+="<th>";
+                    table+="Edit";
+                table+="</th>";
+                
                 
                table +="</tr>";
                table += "</thead>";
