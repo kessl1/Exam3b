@@ -21,11 +21,11 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Customers;
 
-public class ReadQuery {
+public class UserReadQuery {
     private Connection conn;
     private ResultSet results;
     
-    public ReadQuery() {
+    public UserReadQuery() {
         
        Properties propa= new Properties();
        InputStream instr=getClass().getResourceAsStream("dbConn.properties");
@@ -71,53 +71,53 @@ public class ReadQuery {
         
     }
     
-    public String getHTMLtable(){
+    public String getHTMLuserTable(){
         
-            String table="";
-            table += "<table class='table table-striped table-bordered table-hover'>";
-            table += "<thead>";
-            table +="<tr>";
+            String userTable="";
+            userTable += "<table class='table table-striped table-bordered table-hover'>";
+            userTable += "<thead>";
+            userTable +="<tr>";
                
-                table+="<th>";
-                    table+="Customer ID";
-                table+="</th>";
+                userTable+="<th>";
+                    userTable+="Customer ID";
+                userTable+="</th>";
                 
-                table+="<th>";
-                    table+="First Name";
-                table+="</th>";
+                userTable+="<th>";
+                    userTable+="First Name";
+                userTable+="</th>";
                 
-                table+="<th>";
-                    table+="Last Name";
-                table+="</th>";
+                userTable+="<th>";
+                    userTable+="Last Name";
+                userTable+="</th>";
                 
-                table+="<th>";
-                    table+="Address 1";
-                table+="</th>";
+                userTable+="<th>";
+                    userTable+="Address 1";
+                userTable+="</th>";
                 
-                table+="<th>";
-                    table+="Address 2";
-                table+="</th>";
+                userTable+="<th>";
+                    userTable+="Address 2";
+                userTable+="</th>";
                 
-                table+="<th>";
-                    table+="City";
-                table+="</th>";
+                userTable+="<th>";
+                    userTable+="City";
+                userTable+="</th>";
                 
-                table+="<th>";
-                    table+="State";
-                table+="</th>";
+                userTable+="<th>";
+                    userTable+="State";
+                userTable+="</th>";
                 
-                table+="<th>";
-                table+="Zip Code";
-                table+="</th>";
+                userTable+="<th>";
+                userTable+="Zip Code";
+                userTable+="</th>";
                 
-                table+="<th>";
-                    table+="Email Address";
-                table+="</th>";
+                userTable+="<th>";
+                    userTable+="Email Address";
+                userTable+="</th>";
                 
                 
-               table +="</tr>";
-               table += "</thead>";
-               table += "<tbody>";
+               userTable +="</tr>";
+               userTable += "</thead>";
+               userTable += "<tbody>";
          try {   
             while(this.results.next()){
                 
@@ -132,59 +132,56 @@ public class ReadQuery {
                 customer.setZip(this.results.getInt("zip"));
                 customer.setEmailAddr(this.results.getString("emailAddr"));
 
-                table += "<tr>";
+                userTable += "<tr>";
                 
                        
-                    table += "<td>";
-                        table += customer.getCustID();  
-                    table +="</td>";
+                    userTable += "<td>";
+                        userTable += customer.getCustID();  
+                    userTable +="</td>";
                     
-                    table += "<td>";
-                        table += customer.getFirstName();  
-                    table +="</td>";
+                    userTable += "<td>";
+                        userTable += customer.getFirstName();  
+                    userTable +="</td>";
                     
-                    table += "<td>";
-                        table += customer.getLastName();  
-                    table +="</td>";
+                    userTable += "<td>";
+                        userTable += customer.getLastName();  
+                    userTable +="</td>";
                     
-                    table += "<td>";
-                        table += customer.getAddr1();  
-                    table +="</td>";
+                    userTable += "<td>";
+                        userTable += customer.getAddr1();  
+                    userTable +="</td>";
                     
-                    table += "<td>";
-                        table += customer.getAddr2();  
-                    table +="</td>";
+                    userTable += "<td>";
+                        userTable += customer.getAddr2();  
+                    userTable +="</td>";
                     
-                    table += "<td>";
-                        table += customer.getCity();  
-                    table +="</td>";
+                    userTable += "<td>";
+                        userTable += customer.getCity();  
+                    userTable +="</td>";
                     
-                    table += "<td>";
-                        table += customer.getStateName();  
-                    table +="</td>";
+                    userTable += "<td>";
+                        userTable += customer.getStateName();  
+                    userTable +="</td>";
                     
-                    table += "<td>";
-                        table += customer.getZip();  
-                    table +="</td>";
+                    userTable += "<td>";
+                        userTable += customer.getZip();  
+                    userTable +="</td>";
                     
-                    table += "<td>";
-                        table += customer.getEmailAddr();  
-                    table +="</td>";
+                    userTable += "<td>";
+                        userTable += customer.getEmailAddr();  
+                    userTable +="</td>";
                               
-                    table += "<td>";
-                        table += "<a href=delete?custID=" + customer.getCustID() + "> Delete </a>";
-                    table +="</td>";
                 
-                table +="</tr>";
+                userTable +="</tr>";
             }
             
             
         } catch (SQLException ex) {
             Logger.getLogger(ReadQuery.class.getName()).log(Level.SEVERE, null, ex);
         }
-        table += "</tbody>";
-        table +="</table>";
-        return table;
+        userTable += "</tbody>";
+        userTable +="</table>";
+        return userTable;
         
     }
 }
