@@ -27,17 +27,17 @@
                 
                 <tr>
                  <td>First Name:</td>
-                 <td><input type="text" name="firstName" value="<%= customer.getFirstName() %>"/></td><br>
+                 <td><input type="text" name="firstName" value="<%= customer.getFirstName() %>" required/></td><br>
                 </tr>
             
                 <tr>
                 <td>Last Name:</td>
-                <td><input type="text" name="lastName" value="<%= customer.getLastName() %>"/></td><br>
+                <td><input type="text" name="lastName" value="<%= customer.getLastName() %>"required/></td><br>
                 </tr>
                     
                 <tr>
                   <td>Address 1:</td>
-                  <td><input type="text" name="addr1" value="<%= customer.getAddr1() %>"/></td><br>
+                  <td><input type="text" name="addr1" value="<%= customer.getAddr1() %>" required/></td><br>
                 </tr>
                 
                 <tr>  
@@ -47,22 +47,22 @@
             
                 <tr>
                 <td>City:</td>
-                <td><input type="text" name="city" value="<%= customer.getCity() %>"/></td><br>
+                <td><input type="text" name="city" value="<%= customer.getCity() %>" required/></td><br>
                 </tr>
                 
                 <tr>  
                  <td>State:</td>
-                 <td><input type="text" name="stateName" value="<%= customer.getStateName()%>"/></td><br>
+                 <td><input type="text" name="stateName" value="<%= customer.getStateName()%>"maxlength="2" required/></td><br>
                 </tr>
                 
                 <tr>  
                  <td>Zip Code:</td>
-                 <td><input type="text" name="zip" value="<%= customer.getZip()%>"/></td><br>
+                 <td><input type="text" name="zip" value="<%= customer.getZip()%>"max="99999" min="10000" required/></td><br>
                 </tr>
                 
                 <tr>  
                  <td>Email Address:</td>
-                 <td><input type="text" name="emailAddr" value="<%= customer.getEmailAddr()%>"/></td><br>
+                 <td><input type="text" name="emailAddr" value="<%= customer.getEmailAddr()%>" required/></td><br>
                 </tr>
                 
                 <br>

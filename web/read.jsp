@@ -44,7 +44,8 @@
             
         </form>
         </div>
-        
+        <br>
+        <a href="index.jsp">Log Out</a>
         <%@ include file="includes/footer.jsp" %>
         
         </div>
